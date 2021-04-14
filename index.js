@@ -42,6 +42,7 @@ inquirer.prompt([
 
 // TODO: Create a function to write README file
 .then((response) => {
+
     const writeReadme = ({title,description,installation,usage,license,contribution,test}) => {
         `# ${title}
 
@@ -91,9 +92,8 @@ inquirer.prompt([
             }
         }
     }
-    fs.writeFile('./generated-readmes/README.md', 'utf8', (data, err) =>
-        error ? console.error(error) : console.log("Generating README")
-    )
+    fs.writeFile('./generated-readmes/README.md', response, writeReadme, (err) =>
+        err ? console.error(error) : console.log("Generating README"))
 })
 
 // // TODO: Create a function to initialize app
