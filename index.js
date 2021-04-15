@@ -83,19 +83,19 @@ inquirer.prompt([
 
         ## Questions
         `
-        function licenseText() {
-            if (license !== null) {
-                fs.appendFile(`This project is licensed under the ${license} license.`)
-            }
-            else {
-                fs.appendFile(`This project is unlicensed`)
-            }
-        }
     }
-    fs.writeFile('./generated-readmes/README.md', response, writeReadme, (err) =>
-        err ? console.error(error) : console.log("Generating README"))
+    fs.writeFile('./generated-readmes/README.md', `${writeReadme}`, (err) =>
+    err ? console.error(error) : console.log("Generating README"))
 })
 
+function licenseText() {
+    if (license !== null) {
+        fs.appendFile(`This project is licensed under the ${license} license.`)
+    }
+    else {
+        fs.appendFile(`This project is unlicensed`)
+    }
+}
 // // TODO: Create a function to initialize app
 // function init() {}
 
