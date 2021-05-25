@@ -8,11 +8,3 @@ inquirer.prompt(questions).then((response) => {
     fs.writeFile('./generated-readmes/README.md', writeReadme, (err) =>
     err ? console.error(error) : console.log("Generating README"));    
 })
-
-    // // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
-
-

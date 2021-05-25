@@ -20,9 +20,10 @@ const questions = [
         name: 'usage'
     },
     {
-        type: 'input',
-        message:'Please enter the required license (if none, click "enter"):',
-        name: 'license'
+        type: 'list',
+        message:'Please select the required license (if none, click "enter"):',
+        name: 'license',
+        choices: ["No license", "MIT", "Affero GPL", "Artistic License 2.0", "BSD 3-Clause License"]
     },
     {
         type: 'input',
